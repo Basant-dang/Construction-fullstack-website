@@ -5,7 +5,7 @@ from django.shortcuts import redirect
 
 # Create your views here.
 
-@login_required
+# @login_required
 def home(request):
     return render(request,'home.html')
 
