@@ -37,7 +37,7 @@
         <tbody>
             {% for project in projects %}
             <tr>
-                <td>{{ project.name }}</td>
+                <td><a href="{% url 'project_detail' project.pk %}">{{ project.name }}</a></td>
                 <td>{{ project.client_name }}</td>
                 <td>{{ project.status }}</td>
                 <td>{{ project.start_date }}</td>
@@ -46,6 +46,7 @@
                 <td>
                     <a href="{% url "edit_project" project.pk %}" class="btn btn-sm btn-outline-primary">Edit</a>
                     <a href="{% url "delete_project" project.pk %}" class="btn btn-sm btn-outline-primary">Delete</a>
+                    <a href="{% url 'upload_document' project.pk %}" class="btn btn-sm btn-secondary">Upload Doc</a>
                 </td>
             </tr>
             {% empty %}
